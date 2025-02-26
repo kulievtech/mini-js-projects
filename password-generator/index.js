@@ -1,4 +1,4 @@
-const characters = [
+const letters = [
     "A",
     "B",
     "C",
@@ -50,17 +50,10 @@ const characters = [
     "w",
     "x",
     "y",
-    "z",
-    "0",
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
+    "z"
+];
+const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+const specialCharacters = [
     "~",
     "`",
     "!",
@@ -119,11 +112,16 @@ function generateTwoRandomPasswords() {
     let randomPasswordOne = "";
     let randomPasswordTwo = "";
 
-    for (let i = 1; i <= passwordLength; i++) {
-        let randomOne = Math.floor(Math.random() * characters.length);
-        let randomTwo = Math.floor(Math.random() * characters.length);
-        randomPasswordOne += characters[randomOne];
-        randomPasswordTwo += characters[randomTwo];
+    let charOptions = letters.slice();
+    if (isNumberIncluded) charOptions = charOptions.concat(numbers);
+    if (isSymbolIncluded) charOptions = charOptions.concat(specialCharacters);
+
+    for (let i = 0; i < passwordLength; i++) {
+        let randomIndexOne = Math.floor(Math.random() * charOptions.length);
+        randomPasswordOne += charOptions[randomIndexOne];
+
+        let randomIndexTwo = Math.floor(Math.random() * charOptions.length);
+        randomPasswordTwo += charOptions[randomIndexTwo];
     }
 
     passwordOneEl.textContent = randomPasswordOne;
