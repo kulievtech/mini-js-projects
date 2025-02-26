@@ -91,3 +91,55 @@ const characters = [
     "?",
     "/"
 ];
+
+let symbolEl = document.getElementById("symbols");
+let numberEl = document.getElementById("numbers");
+let passwordOneEl = document.getElementById("password1");
+let passwordTwoEl = document.getElementById("password2");
+let passwordLengthEl = document.getElementById("password-length");
+
+symbolEl.addEventListener("change", function (e) {
+    isSymbolIncluded = e.target.checked;
+});
+
+numberEl.addEventListener("change", function (e) {
+    isNumberIncluded = e.target.checked;
+});
+
+passwordLengthEl.addEventListener("input", function () {
+    passwordLength = parseInt(passwordLengthEl.value, 10);
+});
+
+let isSymbolIncluded = symbolEl.checked;
+let isNumberIncluded = numberEl.checked;
+
+let passwordLength = 15;
+
+function generateTwoRandomPasswords() {
+    let randomPasswordOne = "";
+    let randomPasswordTwo = "";
+
+    for (let i = 1; i <= passwordLength; i++) {
+        let randomOne = Math.floor(Math.random() * characters.length);
+        let randomTwo = Math.floor(Math.random() * characters.length);
+        randomPasswordOne += characters[randomOne];
+        randomPasswordTwo += characters[randomTwo];
+    }
+
+    passwordOneEl.textContent = randomPasswordOne;
+    passwordTwoEl.textContent = randomPasswordTwo;
+}
+
+function copyToClipboard(passwordBoxId) {
+    const textToCopy = document.getElementById(passwordBoxId).textContent;
+
+    navigator.clipboard.writeText(textToCopy);
+
+    if (textToCopy) {
+        alert("Password copied to clipboard!");
+    } else {
+        alert(
+            "You did not generate a password yet, please click Generate Password button."
+        );
+    }
+}

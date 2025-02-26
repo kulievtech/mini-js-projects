@@ -15,7 +15,13 @@
 
             <div class="controls">
                 <label for="length">Password Length:</label>
-                <input type="number" id="length" min="15" max="50" value="15" />
+                <input
+                    type="number"
+                    id="password-length"
+                    min="7"
+                    max="50"
+                    value="15"
+                />
 
                 <div class="toggle-group">
                     <label>
@@ -29,16 +35,26 @@
                 </div>
             </div>
 
-            <button id="generate">Generate Passwords</button>
+            <button id="generate" onclick="generateTwoRandomPasswords()">
+                Generate Passwords
+            </button>
 
             <div class="separator"></div>
 
             <div class="password-container">
-                <div class="password-box" id="password1"></div>
-                <div class="password-box" id="password2"></div>
+                <div
+                    class="password-box"
+                    id="password1"
+                    onclick="copyToClipboard('password1')"
+                ></div>
+                <div
+                    class="password-box"
+                    id="password2"
+                    onclick="copyToClipboard('password2')"
+                ></div>
             </div>
         </div>
 
-        <script src="script.js"></script>
+        <script src="index.js"></script>
     </body>
 </html>
