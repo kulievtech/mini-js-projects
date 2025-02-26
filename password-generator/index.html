@@ -4,8 +4,41 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Random Password Generator</title>
+        <link rel="stylesheet" href="index.css" />
     </head>
     <body>
-        <script src="index.js"></script>
+        <div class="container">
+            <h1>Create a Secure Random Password</h1>
+            <p class="subtitle">
+                Say goodbye to weak and insecure passwords forever.
+            </p>
+
+            <div class="controls">
+                <label for="length">Password Length:</label>
+                <input type="number" id="length" min="15" max="50" value="15" />
+
+                <div class="toggle-group">
+                    <label>
+                        <input type="checkbox" id="symbols" checked /> Include
+                        Symbols
+                    </label>
+                    <label>
+                        <input type="checkbox" id="numbers" checked /> Include
+                        Numbers
+                    </label>
+                </div>
+            </div>
+
+            <button id="generate">Generate Passwords</button>
+
+            <div class="separator"></div>
+
+            <div class="password-container">
+                <div class="password-box" id="password1"></div>
+                <div class="password-box" id="password2"></div>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
     </body>
 </html>
