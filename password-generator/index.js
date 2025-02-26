@@ -112,16 +112,22 @@ function generateTwoRandomPasswords() {
     let randomPasswordOne = "";
     let randomPasswordTwo = "";
 
-    let charOptions = letters.slice();
-    if (isNumberIncluded) charOptions = charOptions.concat(numbers);
-    if (isSymbolIncluded) charOptions = charOptions.concat(specialCharacters);
+    let characters = letters.slice();
+
+    if (isNumberIncluded) {
+        characters = characters.concat(numbers);
+    }
+
+    if (isSymbolIncluded) {
+        characters = characters.concat(specialCharacters);
+    }
 
     for (let i = 0; i < passwordLength; i++) {
-        let randomIndexOne = Math.floor(Math.random() * charOptions.length);
-        randomPasswordOne += charOptions[randomIndexOne];
+        let randomIndexOne = Math.floor(Math.random() * characters.length);
+        randomPasswordOne += characters[randomIndexOne];
 
-        let randomIndexTwo = Math.floor(Math.random() * charOptions.length);
-        randomPasswordTwo += charOptions[randomIndexTwo];
+        let randomIndexTwo = Math.floor(Math.random() * characters.length);
+        randomPasswordTwo += characters[randomIndexTwo];
     }
 
     passwordOneEl.textContent = randomPasswordOne;
