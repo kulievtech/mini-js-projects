@@ -120,10 +120,10 @@ button:hover {
 
 .password-box {
     background: #333;
-    padding: 1rem; /* Reduced padding */
+    padding: 1rem;
     border-radius: 8px;
     width: calc(50% - 0.5rem);
-    font-size: 1rem; /* Reduced font size */
+    font-size: 1rem;
     color: #ff6f61;
     cursor: pointer;
     transition: background 0.3s ease, transform 0.3s ease;
