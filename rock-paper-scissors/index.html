@@ -12,7 +12,6 @@
                 <h1>Rock Paper Scissors</h1>
             </header>
 
-            <!-- Scoreboard -->
             <div class="scoreboard">
                 <div class="score player-score">
                     <h2>Player</h2>
@@ -24,35 +23,41 @@
                 </div>
             </div>
 
-            <!-- Game Area -->
             <div class="game-area">
-                <!-- Choices -->
                 <div class="choices">
-                    <button id="rock" class="choice-button rock">✊</button>
-                    <button id="paper" class="choice-button paper">✋</button>
-                    <button id="scissors" class="choice-button scissors">
+                    <button id="rock" value="rock" class="choice-button rock">
+                        ✊
+                    </button>
+                    <button
+                        id="paper"
+                        value="paper"
+                        class="choice-button paper"
+                    >
+                        ✋
+                    </button>
+                    <button
+                        id="scissors"
+                        value="scissors"
+                        class="choice-button scissors"
+                    >
                         ✌️
                     </button>
                 </div>
 
-                <!-- Result Display -->
                 <div id="result-display" class="result-display">
                     <p id="result-message">Make your move!</p>
                 </div>
 
-                <!-- Reset Button -->
                 <button id="reset-button" class="reset-button">
                     Reset Game
                 </button>
             </div>
 
-            <!-- Footer -->
             <footer>
                 <p>Rock Paper Scissors Game - Designed with ❤️</p>
             </footer>
         </div>
 
-        <!-- Script -->
         <script src="index.js"></script>
     </body>
 </html>
